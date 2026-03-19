@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }   
+
+    </style>
+
+</head>
+
+<body>
+      <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+
+
+    <script type="text/babel">
+
+        let count = 0;
+        const [counter, setCounter] = React.useState(counnt);
+        const increment = () => {
+            setCounter(counter + 1);
+        }
+        const decrement = () => {
+            setCounter(counter - 1);
+        }
+        const reset = () => {
+            setCounter(0);
+        }
+        function structure() {
+            return (
+                <div>
+                    <h1>{counter}</h1>
+                    <button  id="increment" onClick={increment}>+</button>
+                    <button id="decrement" onClick={decrement}>-</button>
+                    <button id="reset" onClick={reset}>Reset</button>
+                </div>
+            )
+        }
+        ReactDOM.render(structure(), document.getElementById('root'));
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
