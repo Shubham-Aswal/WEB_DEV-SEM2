@@ -1,34 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import viteLogo from '/vite.svg'
 import './App.css'
-
+import ArrayMethod from './components/ArrayMethod'
 function App() {
-  const [ptCounter,setCnt] = useState(0);
-  const [mushroom,setMsh] = useState(0);
+  const [count, setCount] = useState(0)
 
-  useEffect(()=>{
-
-   
-
-  
-  },[mushroom])
-
-  return(
-
+  return (
     <>
-    <h1>hello world</h1>
-    
+
+    <ArrayMethod/>
+      
+
     </>
   )
-
-
-
-
-
-  
-  
 }
 
 export default App
