@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        .main {
+            height: 600px;
+            width: 400px;
+            border: 2px solid black;
+
+        }
+
+        .sq {
+            height: 50px;
+            width: 50px;
+            border-radius: 5px;
+            background-color: red;
+            position: relative;
+            top: 100px;
+            left: 200px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const root = document.getElementById('root');
+        let score = 0;
+        function Boxgame() {
+
+            const handleClick = (e) => {
+                const box = e.target;
+                score++;
+                const scor = document.querySelector(".score-board");
+                scor.style.textContent = `Score : ${score}`;
+                box.style.top = Math.random() * (600 - 50) + "px";
+                box.style.left = Math.random() * (400 - 50) + "px";
+
+            }
+
+
+            return (
+                <>
+                    <h2>Box Game</h2>
+                    <div className="main">
+
+                        <div className="score-board"> Score : 0</div>
+                        <div className="sq" onClick={handleClick} style={{
+                            top: "100px",
+                            left: "200px"
+                        }}></div>
+                    </div>
+                </>
+            )
+        }
+        ReactDOM.render(<Boxgame />, root);
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
